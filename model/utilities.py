@@ -120,7 +120,7 @@ def hyperbolic_ball(x, y, neg=False, eps=1E-6):
     d = x_d * y_d
     z = z / (d + eps)
     z  = (2 * z) + 1
-    arcosh = z + tf.sqrt(tf.square(z - 1) + eps)
+    arcosh = z + tf.sqrt(tf.square(z) - 1 + eps)
     arcosh = tf.log(arcosh)
     if(neg):
         arcosh = -arcosh
